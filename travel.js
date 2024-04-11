@@ -48,6 +48,21 @@ ScrollReveal().reveal(".header__content div", {
   ...scrollRevealOption,
   delay: 3000,
 });
-ScrollReveal().reveal("header .nav__links", {
-  delay: 3000,
+
+
+const scrollRevealOptions = {
+  distance: "50px",
+  origin: "top",
+  duration: 2000,
+};
+ScrollReveal().reveal(".nav__logo", {
+  ...scrollRevealOptions,
+  delay: 2000,
+  afterReveal: (el) => {
+    el.classList.add("bounce"); // Add the bounce class after reveal
+  },
 });
+// ScrollReveal().reveal("nav .nav__links", {
+//   ...scrollRevealOptions,
+//   delay: 2000,
+// });

@@ -59,9 +59,20 @@ nav{
 }
 .nav__logo a img{
     max-width: 80px;
+    animation: bounce 0.5s ease 8;
 }
-.nav__logo .logo-color{
-    
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .nav__links{
@@ -173,9 +184,96 @@ nav{
     margin-bottom: 2rem;
     color: var(--text-dark);
 }
-@media (width > 540) {
+
+.banner{
+margin-top: 5rem;
+display: grid;
+}
+.banner__card{
+    padding: 2rem;
+}
+
+.banner__card:nth-child(1){
+    position: relative;
+    isolation: isolate;
+    padding-block: 5rem;
+    background-color: #ffd457;
+}
+.banner__card:nth-child(2) {
+   
+    background-color: #ffd457;
+}
+.banner__card:nth-child(3) {
+
+    background-color: #ffc832;
+}
+
+.banner__card:nth-child(4) {
+
+    background-color: #ffad43;
+}
+.banner__card h4{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+.banner__card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+
+    color: var(--text-dark);
+}
+
+.banner__card a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.banner__content{
+position: absolute;
+bottom: 0;
+left: 0;
+height: calc(100% + 4rem);
+width: 100%;
+
+padding-top: 4rem;
+padding-left: 2rem;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+z-index: 1;
+background-color: var(--primary-color);
+border-top-right-radius: 100%;
+}
+
+.banner__content h2{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 5rem;
+    color: var(--text-dark);
+}
+
+.banner__content p{
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.banner__content h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+
+@media (width > 540px) {
     .header__image{
         min-height: max(75vh, 550px);
+    }
+
+    .banner{
+        grid-template-columns: repeat(2, 1fr);
+      
     }
 }
 
@@ -227,6 +325,19 @@ nav{
  .header__content h2 {
      font-size: 5rem;
      line-height: 4rem;
+ }
+ .banner{
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr)
+    minmax(0, calc(var(--max-width)/4))
+    minmax(0, calc(var(--max-width)/4))
+    minmax(0, calc(var(--max-width)/4))
+    minmax(0, calc(var(--max-width)/4))
+    minmax(1rem, 1fr);
+    background-color:#ffad23;
+ }
+ .banner__card:nth-child(1){
+    grid-column: 1/3;
  }
 }
 @media(width > 1024px){
